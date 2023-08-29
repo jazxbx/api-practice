@@ -6,7 +6,6 @@ const DogSection = () => {
   const [dogs, setDogs] = useState([]);
   // create an async function ato fetch dog images via an HTTP GET request
   async function fetchDogs() {
-    console.log(`fetching dogs`);
     // storing result of fn in a variable called res
     const res = await fetch("https://dog.ceo/api/breeds/image/random/10");
     // transform the res value to a json obj and storing that value to local
