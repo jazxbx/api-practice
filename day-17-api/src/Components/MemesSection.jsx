@@ -19,7 +19,7 @@ const Memes = () => {
     <>
       <h2 className="heading">Memes</h2>
       <p className="text">
-        {`Here's an API to fetch random memes:`}
+        Here's an API to fetch random memes:
         <a href="https://api.imgflip.com/get_memes"></a>
       </p>
       <div className="container">
