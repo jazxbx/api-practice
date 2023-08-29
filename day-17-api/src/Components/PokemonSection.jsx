@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const Pokemon = () => {
-  const [request, setRequest] = useState("");
-  const [pokemon, setPokemon] = useState("ditto");
+  const [pokemon, setPokemon] = useState([]);
+  const [request, setRequest] = useState("ditto");
 
   async function fetchPokemon() {
     // Fetch data from the pokemon api
@@ -14,8 +14,10 @@ const Pokemon = () => {
   }
   // useEffect to handle initial rendering and updates
   useEffect(() => {
+    console.log(`request state:`, request);
     fetchPokemon();
-  }, []);
+    // fetching happens when request state is changed
+  }, [request]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -37,6 +39,7 @@ const Pokemon = () => {
         <input
           value={request}
           type="text"
+          placeholder="Enter Pokemon name..."
           onChange={(e) => setRequest(e.target.value)}
         />
         <button type="submit">Search</button>
