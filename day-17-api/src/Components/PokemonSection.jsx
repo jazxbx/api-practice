@@ -45,11 +45,19 @@ const Pokemon = () => {
         <button type="submit">Search</button>
       </form>
       <div id="pokemon-display">
-        <p>{pokemon.name}</p>
+        {/* <p>{pokemon.name}</p>
         <img
           src={pokemon.sprites?.front_default}
           alt={`${pokemon.name} sprite`}
-        />
+        /> */}
+        <p>{pokemon.name}</p>
+        {/* temporary fix. Ditto img dissapears and displays as undefined when input box is empty */}
+        {pokemon.sprites && pokemon.sprites.front_default && (
+          <img
+            src={pokemon.sprites.front_default}
+            alt={`${pokemon.name} sprite`}
+          />
+        )}
       </div>
     </div>
   );
